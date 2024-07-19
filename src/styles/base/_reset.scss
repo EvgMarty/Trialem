@@ -10,7 +10,7 @@ html {
 
 body,
 html {
-  // min-height: 100%;
+  min-height: 100%;
   margin: 0;
   scroll-behavior: smooth;
 }
@@ -31,8 +31,7 @@ body {
   text-rendering: optimizespeed;
 }
 
-
-details>summary,
+details > summary,
 li,
 ol,
 ul {
@@ -74,7 +73,6 @@ time {
   display: block;
 }
 
-
 figure,
 blockquote {
   margin: 0;
@@ -98,7 +96,6 @@ video {
   max-width: 100%;
 }
 
-
 b,
 strong {
   font-weight: 900;
@@ -107,7 +104,6 @@ strong {
 address {
   font-style: normal;
 }
-
 
 button {
   margin: 0;
@@ -127,9 +123,9 @@ button:disabled {
   cursor: default;
 }
 
-[type=button],
-[type=reset],
-[type=submit],
+[type='button'],
+[type='reset'],
+[type='submit'],
 button {
   -webkit-appearance: none;
 }

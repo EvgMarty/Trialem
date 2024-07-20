@@ -1,0 +1,20 @@
+.rental {
+  padding-block: 80px 130px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(56, 28, 117, 1) 94%,
+    rgba(56, 28, 117, 1) 94%,
+    rgba(255, 255, 255, 1) 94%,
+    rgba(255, 255, 255, 1) 94%,
+    rgba(255, 255, 255, 1) 94%
+  );
+
+  .title {
+    margin-bottom: 50px;
+  }
+
+  .text {
+    max-width: 310px;
+    margin-bottom: 25px;
+  }
+}

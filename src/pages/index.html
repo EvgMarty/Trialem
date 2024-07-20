@@ -3,5 +3,11 @@
   src="html/layouts/_html.html"
   locals='{"pageTitle" : "Home","pageClass" : "home-page"}'
 >
-  <block name="main"> <main></main></block
-></extends>
+  <block name="main">
+    <main>
+      <include src="html/pages/home/hero/_hero.html"></include>
+      <include src="html/pages/home/about/_about.html"></include>
+      <include src="html/pages/home/rental/_rental.html"></include>
+    </main>
+  </block>
+</extends>

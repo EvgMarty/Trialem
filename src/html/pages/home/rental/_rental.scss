@@ -1,3 +1,5 @@
+@use '../../../../styles/mixins/' as *;
+
 .rental {
   padding-block: 80px 130px;
   background-image: linear-gradient(
@@ -17,4 +19,59 @@
     max-width: 310px;
     margin-bottom: 25px;
   }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.rental-ptice {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 60px;
+}
+.price-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 16px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 36px;
+
+    @include bg-contain;
+  }
+
+  &.icon-alarm {
+    &::before {
+      background-image: var(--icon-alarm);
+    }
+  }
+
+  &.icon-time {
+    &::before {
+      background-image: var(--icon-time);
+    }
+  }
+  &.icon-sandclock {
+    &::before {
+      background-image: var(--icon-sandclock);
+    }
+  }
+  &.icon-calendar {
+    &::before {
+      background-image: var(--icon-calendar);
+    }
+  }
+}
+
+.ptice-card__title {
+}
+.color-accent {
+}
+.price-card__text {
 }

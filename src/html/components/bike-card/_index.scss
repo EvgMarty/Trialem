@@ -1,0 +1,42 @@
+.bike-card {
+  padding: 16px;
+  box-shadow: 0px 0px 32px 8px rgba(0, 0, 0, 0.08);
+  max-width: 280px;
+
+  &__img {
+    margin-bottom: 25px;
+  }
+
+  &__content {
+    padding: 16px;
+  }
+  &__title {
+    font-weight: 500;
+  }
+  &__lable {
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: var(--c-gray);
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__price {
+    font-size: 18px;
+  }
+  &__cost {
+    font-weight: 600;
+  }
+
+  .btn {
+    border-color: transparent;
+    color: var(--c-pink);
+
+    &:hover {
+      color: var(--c-white);
+    }
+  }
+}

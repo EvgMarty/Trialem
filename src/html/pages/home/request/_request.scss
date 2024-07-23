@@ -1,0 +1,35 @@
+@use '../../../../styles/mixins/' as *;
+
+.request {
+  position: relative;
+  padding-block: 80px 100px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0px;
+    height: 600px;
+    background-image: linear-gradient(
+      90deg,
+      rgb(56, 28, 117) 94%,
+      rgb(56, 28, 117) 94%,
+      rgb(255, 255, 255) 94%,
+      rgb(255, 255, 255) 94%,
+      rgb(255, 255, 255) 94%
+    );
+    z-index: -1;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .form-wrapper{
+    padding-left: 50px;
+  }
+
+}

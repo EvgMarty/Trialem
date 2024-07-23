@@ -1,0 +1,99 @@
+@use '../../../../styles/mixins/' as *;
+
+.feedback {
+  padding-block: 80px 60px;
+  &__inner {
+    display: grid;
+    grid-template-columns: 300px 860px;
+  }
+
+  .title {
+    margin-bottom: 30px;
+  }
+
+  .slider {
+    padding: 30px;
+  }
+
+  .swiper-slide {
+    box-sizing: border-box !important;
+    width: fit-content !important;
+  }
+  .swiper-wrapper {
+    box-sizing: border-box !important;
+  }
+}
+
+// swiper navigation
+.slider-actions {
+  display: flex;
+  gap: 12px;
+
+  .slider-btn {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    outline: 2px solid transparent;
+    outline-offset: 0;
+    transition: all 0.2s ease-in-out;
+
+    @include hover {
+      color: var(--c-pink);
+    }
+
+    &::before {
+      content: '';
+      width: 10px;
+      height: 20px;
+      mask-image: var(--icon-prev);
+      @include mask-contain;
+      background-color: currentColor;
+    }
+
+    &--next {
+      &::before {
+        transform: scaleX(-1);
+      }
+    }
+
+    &:focus {
+      outline-color: var(--c-pink);
+      outline-offset: 3px;
+    }
+
+    &[disabled] {
+      color: var(--c-gray);
+      pointer-events: none;
+    }
+  }
+}
+
+.feedback-card {
+  padding: 55px;
+  max-width: 430px;
+
+  &__body {
+    margin-bottom: 20px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+  &__info {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--c-gray);
+  }
+}

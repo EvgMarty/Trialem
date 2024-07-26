@@ -1,4 +1,3 @@
-<!-- layouts -->
 <extends
   src="html/layouts/_html.html"
   locals='{"pageTitle" : "About","pageClass" : "about-page"}'
@@ -9,6 +8,10 @@
         src="html/components/breadcrumbs/_index.html"
         locals='{"pageName" : "About"}'
       ></include>
+      <include src="html/pages/about/movement/_movement.html"></include>
+      <include src="html/pages/about/stats/_stats.html"></include>
+      <include src="html/pages/about/adventages/_adventages.html"></include>
+      <include src="html/pages/about/discount/_discount.html"></include>
       <include src="html/pages/home/choose/_choose.html"></include>
       <include src="html/pages/home/request/_request.html"></include>
     </main>

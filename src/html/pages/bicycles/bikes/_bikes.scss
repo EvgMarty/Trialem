@@ -1,1 +1,85 @@
 @use '../../../../styles/mixins/' as *;
+
+.bikes {
+  .tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+
+      border: 1px solid var(--c-lightgray);
+      background-color: var(--c-white);
+      border-radius: 4px;
+
+      outline: 2px solid transparent;
+      outline-offset: 6px;
+
+      transition: all 0.2s ease-in-out;
+
+      &::before {
+        content: '';
+        width: 16px;
+        height: 16px;
+        @include mask-contain;
+        mask-image: var(--icon-arrow-right);
+        background-color: #3b3d42;
+      }
+
+      &:focus {
+        outline-color: #fbd7df;
+        outline-offset: 2px;
+      }
+
+      &.active {
+        background-color: #ffeaef;
+        border-color: var(--c-pink);
+
+        &::before {
+          background-color: #6ec1e4;
+        }
+      }
+
+      @include hover {
+        background-color: #ffeaef;
+      }
+    }
+  }
+}
+
+.bikes-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 110px;
+  gap: 24px;
+}
+
+
+.tabs {
+  &__wrapper {
+    position: relative;
+  }
+
+  &-content {
+    position: absolute;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+
+    &.active {
+      position: relative;
+      z-index: 10;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

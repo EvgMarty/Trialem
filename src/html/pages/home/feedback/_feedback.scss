@@ -1,18 +1,37 @@
 @use '../../../../styles/mixins/' as *;
 
 .feedback {
-  padding-block: 80px 60px;
+  @include size('padding-top', 80, 35);
+  @include size('  padding-bottom', 80, 35);
   &__inner {
     display: grid;
     grid-template-columns: 300px 860px;
+
+    @include rmax($xl) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .content {
+    @include rmax($xl) {
+      margin-inline: auto;
+      text-align: center;
+    }
   }
 
   .title {
     margin-bottom: 30px;
+
+    @include rmax($xl) {
+      &::before {
+        margin-inline: auto;
+      }
+    }
   }
 
   .slider {
     padding: 30px;
+    overflow: hidden;
   }
 
   .swiper-slide {
@@ -28,6 +47,10 @@
 .slider-actions {
   display: flex;
   gap: 12px;
+
+  @include rmax($xl) {
+    justify-content: center;
+  }
 
   .slider-btn {
     width: 33px;

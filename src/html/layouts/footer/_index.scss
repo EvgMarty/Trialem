@@ -17,6 +17,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+
+  @include rmax($lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include rmax($sm) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .footer-title {
@@ -43,6 +51,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+
+    img {
+      width: 100%;
+    }
   }
 }
 

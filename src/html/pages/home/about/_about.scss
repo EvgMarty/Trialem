@@ -1,8 +1,15 @@
+@use '../../../../styles/mixins/' as *;
+
 .about {
+  @include rmax($md) {
+    color: var(--c-white);
+  }
+
   &__inner {
     display: flex;
     justify-content: flex-end;
-    padding-block: 140px 175px;
+    @include size('padding-top', 140, 35);
+    @include size('  padding-bottom', 175, 35);
 
     background-image: url('/src/assets/images/home/about-bg.webp');
     background-repeat: no-repeat;

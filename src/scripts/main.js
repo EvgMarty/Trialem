@@ -11,11 +11,19 @@ window.addEventListener('scroll', () => {
 
 // simple swiper slider whith2 card
 const swiper = new Swiper('.feedback .swiper', {
-  slidesPerView: 2,
+  slidesPerView: 1,
+  centeredSlides: true,
   // Navigation arrows
   navigation: {
     nextEl: '.slider-btn--next',
     prevEl: '.slider-btn--prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
   },
 });
 
@@ -46,3 +54,16 @@ const showTabs = (tabsNav, tabsContent) => {
 const tabsNav = document.querySelectorAll('.bikes .tabs-nav__link');
 const tabsContent = document.querySelectorAll('.bikes  .tabs-content');
 showTabs(tabsNav, tabsContent);
+
+// burger menu
+const burgerBtnEl = document.querySelector('.burger');
+
+const hunfleBurgerClick = () => {
+  burgerBtnEl.classList.toggle('active');
+};
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('burger')) {
+    hunfleBurgerClick();
+  }
+});

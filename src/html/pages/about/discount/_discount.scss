@@ -2,7 +2,8 @@
 
 .discount {
   @include bg-cover;
-  padding-block: 80px;
+  @include size('padding-top', 80, 35);
+  @include size('  padding-bottom', 80, 35);
 
   &__inner {
     display: flex;
@@ -12,8 +13,25 @@
   .content {
     max-width: 400px;
     width: 100%;
+
+    @include rmax($md) {
+      text-align: center;
+      margin-inline: auto;
+
+      .btn {
+        margin-inline: auto;
+      }
+    }
   }
   .title {
     margin-bottom: 50px;
+
+    @include rmax($md) {
+      margin-bottom: 25px;
+
+      &::before {
+        margin-inline: auto;
+      }
+    }
   }
 }

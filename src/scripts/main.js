@@ -11,15 +11,18 @@ window.addEventListener('scroll', () => {
 
 // simple swiper slider whith2 card
 const swiper = new Swiper('.feedback .swiper', {
-  slidesPerView: 1,
-  centeredSlides: true,
-  // Navigation arrows
+  slidesPerView: 2,
+  spaceBetween: 20,
+
   navigation: {
     nextEl: '.slider-btn--next',
     prevEl: '.slider-btn--prev',
   },
   breakpoints: {
-    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
     992: {
       slidesPerView: 2,
       spaceBetween: 20,
@@ -28,7 +31,6 @@ const swiper = new Swiper('.feedback .swiper', {
 });
 
 // TABS
-
 const showTabs = (tabsNav, tabsContent) => {
   tabsNav?.forEach((navLink, index) => {
     navLink?.addEventListener('click', () => {
@@ -57,13 +59,15 @@ showTabs(tabsNav, tabsContent);
 
 // burger menu
 const burgerBtnEl = document.querySelector('.burger');
+const noScrollBody = document.querySelector('body');
 
-const hunfleBurgerClick = () => {
+const handleBurgerClick = () => {
   burgerBtnEl.classList.toggle('active');
+  noScrollBody.classList.toggle('no-scroll');
 };
 
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('burger')) {
-    hunfleBurgerClick();
+    handleBurgerClick();
   }
 });

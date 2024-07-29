@@ -4,10 +4,17 @@
   .adventages__inner {
     display: flex;
     justify-content: flex-end;
-    padding-block: 60px 100px;
+    @include size('padding-top', 60, 35);
+    @include size('  padding-bottom', 100, 35);
 
     background-image: url('/src/assets/images/services/services-advantages.webp');
-
+    @include size(' background-size', 600, 200);
     background-position: left center;
+
+    @include rmax($md) {
+      padding-bottom: 300px;
+      background-size: 300px;
+      background-position:bottom 20px center;
+    }
   }
 }

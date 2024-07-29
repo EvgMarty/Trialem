@@ -15,6 +15,10 @@ body {
   color: var(--c-primary);
   background-color: var(--c-white);
   min-width: 320px;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 .container {

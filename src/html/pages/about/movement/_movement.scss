@@ -4,9 +4,19 @@
   &__inner {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    padding-block: 60px 100px;
+    @include size('padding-top', 60, 35);
+    @include size('  padding-bottom', 100, 35);
     gap: 100px;
     align-items: center;
+
+    @include rmax($xl) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @include rmax($md) {
+      grid-template-columns: 1fr;
+    }
   }
   .video {
     position: relative;
@@ -19,6 +29,10 @@
     background-position: left center;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+
+    @include rmax($xl) {
+      height: auto;
+    }
 
     &::after {
       content: '';
@@ -43,10 +57,22 @@
 
   .content {
     max-width: 470px;
+
+    @include rmax($md) {
+      text-align: center;
+      margin-inline: auto;
+    }
   }
 
   .title {
     margin-bottom: 50px;
+
+    @include rmax($md) {
+      margin-bottom: 24px;
+      &::before {
+        margin-inline: auto;
+      }
+    }
   }
 
   .text {
@@ -56,5 +82,9 @@
   .buttons {
     display: flex;
     gap: 10px;
+
+    @include rmax($md) {
+      justify-content: center;
+    }
   }
 }

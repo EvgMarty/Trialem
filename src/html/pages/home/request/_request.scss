@@ -44,4 +44,10 @@
   .form-wrapper {
     @include size('  padding-left', 50, 0);
   }
+
+  &__iframe {
+    max-width: 100%;
+    @include size('hight', 585, 200);
+    filter: grayscale(0.75);
+  }
 }

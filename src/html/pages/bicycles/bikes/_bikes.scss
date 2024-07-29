@@ -8,6 +8,10 @@
     gap: 12px;
     margin-bottom: 45px;
 
+    @include rmax($md) {
+      justify-content: center;
+    }
+
     &__link {
       display: flex;
       align-items: center;
@@ -57,9 +61,27 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 110px;
+  justify-items: center;
   gap: 24px;
+
+  @include rmax($lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include rmax($md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include rmax($xs) {
+    grid-template-columns: 1fr;
+
+  }
 }
 
+// .bike-card {
+//   width: 100px;
+//   min-width: 230px;
+// }
 
 .tabs {
   &__wrapper {

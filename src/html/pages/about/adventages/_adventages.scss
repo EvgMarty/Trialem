@@ -4,19 +4,37 @@
   &__inner {
     display: flex;
     justify-content: flex-start;
-    padding-block: 100px;
+    @include size('padding-top', 100, 35);
+    @include size('  padding-bottom', 100, 35);
 
     background-image: url('/src/assets/images/about/about-advantages.webp');
     background-repeat: no-repeat;
-    background-size: 600px;
+    @include size('background-size', 600, 200);
     background-position: right center;
+
+    @include rmax($md) {
+      padding-bottom: 300px;
+      background-size: 300px;
+      background-position: bottom center;
+    }
   }
   .content {
     max-width: 530px;
+    @include rmax($md) {
+      text-align: center;
+      margin-inline: auto;
+    }
   }
 
   .title {
     margin-bottom: 50px;
+
+    @include rmax($md) {
+      margin-bottom: 25px;
+      &::before {
+        margin-inline: auto;
+      }
+    }
   }
 }
 
@@ -25,11 +43,19 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 10px 90px;
 
+  @include rmax($xl) {
+    gap: 10px;
+  }
+
   &__item {
     display: flex;
     align-items: center;
     font-weight: 300;
     gap: 12px;
+
+    @include rmax($md) {
+      gap: 1px;
+    }
 
     &::before {
       content: '';

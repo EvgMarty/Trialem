@@ -1,8 +1,10 @@
 @use '../../../../styles/mixins/' as *;
+
 .stats {
   &__inner {
     position: relative;
-    padding-block: 70px 80px;
+    @include size('padding-top', 70, 35);
+    @include size('  padding-bottom', 80, 35);
     padding-inline: auto;
 
     &::before {
@@ -24,6 +26,14 @@
 .stats__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  @include rmax($lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  @include rmax($sm) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .stats-card {
